@@ -9,7 +9,7 @@ bool isSorted(vector<int>arr){
        }
    return true;
 }
-bool swapexer(vector<int>arr,int i){
+vector<int>swapexer(vector<int>arr,int i){
       vector<int>res=arr;
       swap(res[i],res[i+1]);
       return res;
@@ -18,15 +18,52 @@ bool solve(vector<int>arr,int i,int n){
     if(i>n-2){
         return isSorted(arr);
     }
-      bool swapex=false;
-      bool notswapex=false;
+      bool swapex=true;
+      bool notswapex=true;
+      cout << "Entering from/standing at" << i << endl;
      if(i>0 && i<n-1 &&  arr[i]>arr[i-1] && arr[i]>arr[i+1]){
-           swapex=solve((swapexer(arr,i),i+1,n);
+           cout << "Entering here" << endl;
+           swapex=solve((swapexer(arr,i)),i+1,n);
+           cout << "state after the swapex branch " << endl;
+            for(auto & it:arr){
+                 cout << it << "";
+             }
+            cout << endl;
            notswapex=solve(arr,i+1,n);
+             cout << "state after the non swap(unchanged) branch" << endl;
+           for(auto&it:arr){
+            cout << it << "";
+           }
+          cout << endl;
      }
+    cout << "Standing at i" << i << endl;
+    cout << "Result if swapped" << swapex << endl;
+        cout << "state after the swapex branch " << endl;
+            for(auto & it:arr){
+                 cout << it << "";
+             }
+            cout << endl;
+           
+    cout << "Result if not swapped" << notswapex << endl;
+         cout << "state after the notswapex branch " << endl;
+            for(auto & it:arr){
+                 cout << it << "";
+             }
+            cout << endl;
+
      return swapex||notswapex;
 }
-
+ string solve2(vector<int>&arr){
+     int n=arr.size();
+     int i=1;
+     while(i<n-1){
+       if(arr[i]>arr[i+1] && arr[i] >arr[i-1]){
+            swap(arr[i],arr[i+1]);
+        }
+      i++;
+     } 
+     return  isSorted(arr)?"Yes":"No";
+  }
 int main(){
   ios_base::sync_with_stdio(0);
   cin.tie(0);
@@ -55,12 +92,7 @@ int main(){
             break;
         }
       }
-     if(solve(arr,1,n)){
-        cout << "Yes" << endl;
-     }
-     else if(!solve(arr,1,n)){
-         cout << "No" << endl;
-     }
+       cout << solve2(arr) << endl;
   }
   return 0;
 }
