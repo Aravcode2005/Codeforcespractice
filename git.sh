@@ -55,7 +55,7 @@ echo "Pushing to the origin"
 
 gitbranch=$(git branch)
 
-echo $gitbranch
+echo "Halo  $gitbranch"
 
 git push origin  cp31
 
