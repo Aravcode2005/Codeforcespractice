@@ -45,7 +45,7 @@ if [ $output == "yes" || $output == "Yes" ||  $output == "YES" || $output == 'Y'
 
    read option
 
-   if [  $option == "a" ] ; then
+   if [  $option == "a" ]; then
  
       echo "Enter the name of the branch you want to create"
 
@@ -54,7 +54,7 @@ if [ $output == "yes" || $output == "Yes" ||  $output == "YES" || $output == 'Y'
       git branch $branchname
 
 
-   elif [  $option == "b" ] ; then 
+   elif [  $option == "b" ]; then 
 
         echo "Enter a valid branch name"
 
@@ -63,7 +63,7 @@ if [ $output == "yes" || $output == "Yes" ||  $output == "YES" || $output == 'Y'
         git switch $branchex
 
                
-   elif [ $option == "c" ] ;then 
+   elif [ $option == "c" ];  then 
         
       echo "Enter the name of the branch you want to create"
 
