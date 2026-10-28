@@ -53,6 +53,10 @@ echo "Success"
 
 echo "Pushing to the origin"
 
+gitbranch=$(git branch)
+
+echo $gitbranch
+
 git push origin  cp31
 
 if [ $processcode -ne 0 ]; then
