@@ -53,9 +53,7 @@ echo "Success"
 
 echo "Pushing to the origin"
 
-currentbranch=$(git branch)
-
-git push origin  $currentbranch
+git push origin  cp31
 
 if [ $processcode -ne 0 ]; then
 
