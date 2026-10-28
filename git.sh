@@ -81,6 +81,10 @@ if [ $output == "yes" || $output == "Yes" ||  $output == "YES" || $output == 'Y'
 
       echo "Done!"
 
+fi  
+
+echo "Ok moving on"
+
 
 gitbranch=$(git branch)
 
