@@ -11,7 +11,7 @@ function completed(){
 
   fi
 
-   echo "Success"
+  echo " Success "
 
 }
 
@@ -27,13 +27,11 @@ echo "Your  commit message is $commitmessage"
 
 git commit -m "$commitmessage"
 
-completed()
 
 echo "Syncing to the  origin,please wait ...."
 
 git fetch origin
 
-completed()
 
 echo "Do you want to create a new branch or switch branches?"
 
@@ -55,7 +53,6 @@ if [ $output == "yes" || $output == "Yes" ||  $output == "YES" || $output == 'Y'
 
       git branch $branchname
 
-      completed()
 
    elif [  $option == "b" ] ; then 
 
@@ -64,8 +61,6 @@ if [ $output == "yes" || $output == "Yes" ||  $output == "YES" || $output == 'Y'
         read branchex
 
         git switch $branchex
-
-        completed()
 
                
    elif [ $option == "c" ] ;then 
@@ -76,8 +71,6 @@ if [ $output == "yes" || $output == "Yes" ||  $output == "YES" || $output == 'Y'
 
       git branch $branchname
 
-      completed()
-
       echo "Syncing......"
 
       echo "Enter a valid branch name"
@@ -85,8 +78,6 @@ if [ $output == "yes" || $output == "Yes" ||  $output == "YES" || $output == 'Y'
       read branchex
 
       git switch $branchex
-
-      completed()
 
       echo "Done!"
 
@@ -96,7 +87,5 @@ gitbranch=$(git branch)
 echo "Pushing to $gitbranch"
 
 git push origin cp31
-
-completed()
 
 exit 0
